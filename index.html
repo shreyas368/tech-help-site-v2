@@ -14,21 +14,34 @@
     header {
       background: #222;
       color: white;
-      padding: 10px;
-    }
-    nav ul {
-      list-style: none;
+      padding: 15px;
       display: flex;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
       margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    section {
+      padding: 20px;
+    }
+    section h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
       padding: 0;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
+    ul li {
+      margin: 8px 0;
     }
-    main {
-      padding: 20px;
+    ul li a {
+      text-decoration: none;
+      color: #0066cc;
     }
     footer {
       background: #222;
@@ -40,24 +53,53 @@
       background-color: #111;
       color: #eee;
     }
+    .dark a {
+      color: #66b2ff;
+    }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="articles/Windows/bootloader.html">Windows</a></li>
-        <li><a href="articles/Ubuntu/wifi_ubuntu.html">Ubuntu (Linux)</a></li>
-        <li><a href="articles/Chromebooks/battery.html">Chromebooks</a></li>
-        <li><a href="articles/MacOS/boot.html">macOS</a></li>
-      </ul>
-      <button id="theme-toggle">Theme: Light</button>
-    </nav>
+    <h1>Software Troubleshooting Guides</h1>
+    <button id="theme-toggle">Theme: System</button>
   </header>
 
   <main>
-    <h1>Welcome to Tech Help Hub</h1>
-    <p>Select your OS above to see common problems and fixes.</p>
+    <section>
+      <h2>Windows</h2>
+      <ul>
+        <li><a href="articles/Windows/bootloader.html">Bootloader Repair</a></li>
+        <li><a href="articles/Windows/network.html">Network Issues</a></li>
+        <li><a href="articles/Windows/update.html">Update Failures</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ubuntu (Linux)</h2>
+      <ul>
+        <li><a href="articles/Ubuntu/wifi_ubuntu.html">Wi-Fi Troubleshooting</a></li>
+        <li><a href="articles/Ubuntu/boot.html">Boot Problems</a></li>
+        <li><a href="articles/Ubuntu/package.html">Package Manager Errors</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>macOS</h2>
+      <ul>
+        <li><a href="articles/MacOS/boot.html">Boot Problems</a></li>
+        <li><a href="articles/MacOS/wifi.html">Wi-Fi Issues</a></li>
+        <li><a href="articles/MacOS/update.html">Update Errors</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Chromebooks</h2>
+      <ul>
+        <li><a href="articles/Chromebooks/battery.html">Battery Fix</a></li>
+        <li><a href="articles/Chromebooks/recovery.html">Recovery Mode</a></li>
+        <li><a href="articles/Chromebooks/wifi.html">Wi-Fi Problems</a></li>
+      </ul>
+    </section>
   </main>
 
   <footer>
@@ -69,7 +111,7 @@
     button.addEventListener("click", () => {
       if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
-        button.textContent = "Theme: Light";
+        button.textContent = "Theme: System";
       } else {
         document.body.classList.add("dark");
         button.textContent = "Theme: Dark";
