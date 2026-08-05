@@ -25,18 +25,12 @@
     .banner {
       text-align: center;
       background: #eee;
-      padding: 20px;
-    }
-    .banner img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle shadow for visibility */
+      padding: 30px;
     }
     .banner p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.4em;
       font-weight: bold;
+      margin: 0;
       color: #333;
     }
     section {
@@ -85,9 +79,8 @@
     <button id="theme-toggle">💻 Theme: System</button>
   </header>
 
-  <!-- Encouragement Banner -->
+  <!-- Text-Only Banner -->
   <div class="banner">
-    <img id="banner-img" alt="Encouragement Image">
     <p id="banner-text"></p>
   </div>
 
@@ -135,20 +128,13 @@
 
   <!-- Scripts -->
   <script>
-    // Banner rotation
+    // Banner rotation (text only)
     const banners = [
-      {
-        src: "images/you_can_do_this.jpg",
-        text: "First time fixing software? You got this!"
-      },
-      {
-        src: "images/modern_office_code.jpg",
-        text: "Fixing software together — stay focused, stay confident!"
-      }
+      "First time fixing software? You got this!",
+      "Fixing software together — stay focused, stay confident!"
     ];
     const chosen = banners[Math.floor(Math.random() * banners.length)];
-    document.getElementById("banner-img").src = chosen.src;
-    document.getElementById("banner-text").textContent = chosen.text;
+    document.getElementById("banner-text").textContent = chosen;
 
     // Theme toggle
     const button = document.getElementById("theme-toggle");
