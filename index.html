@@ -78,8 +78,8 @@
 
   <!-- Encouragement Banner -->
   <div class="banner">
-    <img src="banner.jpg" alt="Encouragement Image">
-    <p>First time fixing software? You got this!</p>
+    <img id="banner-img" alt="Encouragement Image">
+    <p id="banner-text"></p>
   </div>
 
   <main>
@@ -124,11 +124,25 @@
     <p>© 2026 Tech Help Hub</p>
   </footer>
 
-  <!-- Theme Toggle Script -->
+  <!-- Scripts -->
   <script>
-    const button = document.getElementById("theme-toggle");
+    // Banner rotation
+    const banners = [
+      {
+        src: "images/you_can_do_this.jpg",
+        text: "First time fixing software? You got this!"
+      },
+      {
+        src: "images/modern_office_code.jpg",
+        text: "Fixing software together — stay focused, stay confident!"
+      }
+    ];
+    const chosen = banners[Math.floor(Math.random() * banners.length)];
+    document.getElementById("banner-img").src = chosen.src;
+    document.getElementById("banner-text").textContent = chosen.text;
 
-    // Detect system preference on first load
+    // Theme toggle
+    const button = document.getElementById("theme-toggle");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (prefersDark) {
       document.body.classList.add("dark");
@@ -137,7 +151,6 @@
       button.textContent = "🌞 Theme: Light";
     }
 
-    // Toggle between Light and Dark
     button.addEventListener("click", () => {
       if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
