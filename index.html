@@ -31,11 +31,13 @@
       max-width: 100%;
       height: auto;
       border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle shadow for visibility */
     }
     .banner p {
       font-size: 1.2em;
       margin-top: 10px;
       font-weight: bold;
+      color: #333;
     }
     section {
       padding: 20px;
@@ -67,6 +69,13 @@
     }
     .dark a {
       color: #66b2ff;
+    }
+    /* Dark mode banner fix */
+    .dark .banner {
+      background: #222;
+    }
+    .dark .banner p {
+      color: #eee;
     }
   </style>
 </head>
