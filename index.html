@@ -22,8 +22,20 @@
     header h1 {
       margin: 0;
     }
-    nav {
+    .banner {
+      text-align: center;
+      background: #eee;
+      padding: 20px;
+    }
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .banner p {
+      font-size: 1.2em;
       margin-top: 10px;
+      font-weight: bold;
     }
     section {
       padding: 20px;
@@ -61,8 +73,14 @@
 <body>
   <header>
     <h1>Software Troubleshooting Guides</h1>
-    <button id="theme-toggle">Theme: System</button>
+    <button id="theme-toggle">💻 Theme: System</button>
   </header>
+
+  <!-- Encouragement Banner -->
+  <div class="banner">
+    <img src="banner.jpg" alt="Encouragement Image">
+    <p>First time fixing software? You got this!</p>
+  </div>
 
   <main>
     <section>
@@ -106,15 +124,27 @@
     <p>© 2026 Tech Help Hub</p>
   </footer>
 
+  <!-- Theme Toggle Script -->
   <script>
     const button = document.getElementById("theme-toggle");
+
+    // Detect system preference on first load
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) {
+      document.body.classList.add("dark");
+      button.textContent = "🌙 Theme: Dark";
+    } else {
+      button.textContent = "🌞 Theme: Light";
+    }
+
+    // Toggle between Light and Dark
     button.addEventListener("click", () => {
       if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
-        button.textContent = "Theme: System";
+        button.textContent = "🌞 Theme: Light";
       } else {
         document.body.classList.add("dark");
-        button.textContent = "Theme: Dark";
+        button.textContent = "🌙 Theme: Dark";
       }
     });
   </script>
