@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Tech Problem Report
+    url: https://github.com/shreyas368/tech-help-site-v2/issues/new?template=tech-problem.yml
+    about: Report a tech problem you'd like a troubleshooting guide for
