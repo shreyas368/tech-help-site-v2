@@ -1,0 +1,49 @@
+name: "Tech Problem Report"
+description: "Report a tech problem you'd like a troubleshooting guide for."
+title: "[Problem] Brief description of the issue"
+labels: ["tech-problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a tech problem! Please fill out the details below so we can create a guide.
+  - type: input
+    id: os
+    attributes:
+      label: "Operating System"
+      description: "Which OS is affected? (Windows, Ubuntu, macOS, Chromebook)"
+      placeholder: "e.g., Windows 10"
+    validations:
+      required: true
+  - type: input
+    id: problem
+    attributes:
+      label: "Problem Summary"
+      description: "Briefly describe the issue."
+      placeholder: "e.g., Bootloader fails with error 0xc000000f"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "Details"
+      description: "Explain what happens, any error codes, and steps you’ve tried."
+      placeholder: "Provide as much detail as possible."
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: "What should happen if the system worked correctly?"
+      placeholder: "e.g., Windows should boot normally after update."
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Additional Notes"
+      description: "Any screenshots, logs, or extra context."
+      placeholder: "Optional"
+    validations:
+      required: false
