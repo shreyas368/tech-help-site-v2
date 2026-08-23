@@ -10,6 +10,7 @@
       margin: 0;
       background-color: #f9f9f9;
       color: #333;
+      scroll-behavior: smooth; /* Enables smooth scrolling */
     }
     header {
       background: #222;
@@ -21,6 +22,25 @@
     }
     header h1 {
       margin: 0;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a.active {
+      color: #ffcc00; /* Highlight active section */
+      text-decoration: underline;
     }
     #search-bar {
       margin-left: 20px;
@@ -90,13 +110,22 @@
     </div>
   </header>
 
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#windows">Windows</a>
+    <a href="#ubuntu">Ubuntu</a>
+    <a href="#macos">macOS</a>
+    <a href="#chromebooks">Chromebooks</a>
+    <a href="#resources">Resources</a>
+  </nav>
+
   <!-- Text-Only Banner -->
   <div class="banner">
     <p id="banner-text"></p>
   </div>
 
   <main id="main-content">
-    <section>
+    <section id="windows">
       <h2>Windows</h2>
       <ul>
         <li><a href="articles/Windows/bootloader.html">Bootloader Repair</a></li>
@@ -105,7 +134,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="ubuntu">
       <h2>Ubuntu (Linux)</h2>
       <ul>
         <li><a href="articles/Ubuntu/wifi_ubuntu.html">Wi-Fi Troubleshooting</a></li>
@@ -114,7 +143,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="macos">
       <h2>macOS</h2>
       <ul>
         <li><a href="articles/MacOS/boot.html">Boot Problems</a></li>
@@ -123,7 +152,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="chromebooks">
       <h2>Chromebooks</h2>
       <ul>
         <li><a href="articles/Chromebooks/battery.html">Battery Fix</a></li>
@@ -133,7 +162,7 @@
     </section>
 
     <!-- Resources Section -->
-    <section>
+    <section id="resources">
       <h2>Resources</h2>
       <ul>
         <li><a href="https://github.com/shreyas368/tech-help-site-v2">GitHub Repository</a></li>
@@ -201,6 +230,20 @@
         section.style.display = sectionHasMatch || query === "" ? "block" : "none";
       });
     });
-  </script>
-</body>
-</html>
+
+    // Active nav highlighting
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("main section");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList
