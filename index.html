@@ -22,6 +22,12 @@
     header h1 {
       margin: 0;
     }
+    #search-bar {
+      margin-left: 20px;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
     .banner {
       text-align: center;
       background: #eee;
@@ -70,12 +76,18 @@
     .dark .banner p {
       color: #eee;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Software Troubleshooting Guides</h1>
-    <button id="theme-toggle">💻 Theme: System</button>
+    <div>
+      <input type="text" id="search-bar" placeholder="Search guides...">
+      <button id="theme-toggle">💻 Theme: System</button>
+    </div>
   </header>
 
   <!-- Text-Only Banner -->
@@ -83,7 +95,7 @@
     <p id="banner-text"></p>
   </div>
 
-  <main>
+  <main id="main-content">
     <section>
       <h2>Windows</h2>
       <ul>
@@ -167,6 +179,27 @@
         document.body.classList.add("dark");
         button.textContent = "🌙 Theme: Dark";
       }
+    });
+
+    // Search functionality
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("keyup", function() {
+      const query = searchBar.value.toLowerCase();
+      const sections = document.querySelectorAll("main section");
+      sections.forEach(section => {
+        const links = section.querySelectorAll("li");
+        let sectionHasMatch = false;
+        links.forEach(link => {
+          const text = link.textContent.toLowerCase();
+          if (text.includes(query)) {
+            link.classList.remove("hidden");
+            sectionHasMatch = true;
+          } else {
+            link.classList.add("hidden");
+          }
+        });
+        section.style.display = sectionHasMatch || query === "" ? "block" : "none";
+      });
     });
   </script>
 </body>
