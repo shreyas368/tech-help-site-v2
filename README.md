@@ -9,7 +9,7 @@ It contains repair articles, images, and resources to support hardware troublesh
 
 # 🎥 YouTube Tutorials
 - Tutorials are coming soon!  
-- Planned topics: Chromebook dual boot walkthrough, Pixelbook battery replacement, Windows bootloader repair.
+- Planned topics: Chromebook dual boot walkthrough, Windows bootloader repair.
 
 # 📂 Repository Structure
 - **articles/** → HTML repair articles (e.g., `boot.html`)  
@@ -21,7 +21,7 @@ It contains repair articles, images, and resources to support hardware troublesh
 
 # 🤝 Community
 - Found an issue? Open a [GitHub Issue](https://github.com/shreyas368/tech-help-site-v2/issues).  
-- Have a tech problem you’d like solved? Add it to the [Google Doc](https://docs.google.com/document/d/1yo3Rbu0pKOOQ7c5iW_ZbEVN4Fq16OfRgOUsxZz80jb8/edit?usp=sharing) or submit via GitHub Issues.  
+- Have a tech problem you’d like solved? submit it to the [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSd_N_QPYF5zpOEjFwuX03t11mNfRhuO4C9NjL3jz1ufY4LE1A/viewform?usp=publish-editor) or submit via GitHub Issues.  
 - I’ll create new guides based on community requests and link them here.  
 - Want to improve a guide? Comment directly on iFixit.  
 - Have video suggestions? Drop them in YouTube comments once tutorials are live.
