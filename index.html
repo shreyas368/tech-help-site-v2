@@ -10,7 +10,6 @@
       margin: 0;
       background-color: #f9f9f9;
       color: #333;
-      scroll-behavior: smooth; /* Enables smooth scrolling */
     }
     header {
       background: #222;
@@ -27,19 +26,14 @@
       background: #444;
       padding: 10px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: color 0.3s;
     }
-    nav a.active {
-      color: #ffcc00; /* Highlight active section */
+    nav a:hover {
       text-decoration: underline;
     }
     #search-bar {
@@ -230,20 +224,6 @@
         section.style.display = sectionHasMatch || query === "" ? "block" : "none";
       });
     });
-
-    // Active nav highlighting
-    const navLinks = document.querySelectorAll("nav a");
-    const sections = document.querySelectorAll("main section");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList
+  </script>
+</body>
+</html>
