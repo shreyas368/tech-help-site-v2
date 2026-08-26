@@ -17,7 +17,9 @@ It contains repair articles, images, and resources to support hardware troublesh
 - **scripts/** → Automation scripts for troubleshooting tasks  
 - **index.html + style.css** → Main site files for GitHub Pages  
 - **README.md** → Central hub linking guides and tutorials  
-- **LICENSE** → MIT License  
+- **LICENSE** → This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+See the [LICENSE](LICENSE) file for details.
+ 
 
 # 🤝 Community
 - Found an issue? Open a [GitHub Issue](https://github.com/shreyas368/tech-help-site-v2/issues).  
